@@ -104,7 +104,7 @@ class CostRbf(BaseCost):
             self
         """
         if signal.ndim == 1:
-            K = pdist(signal.reshape(-1, 1), metric="sqeuclidean")
+            K = pdist(signal.values.reshape(-1, 1), metric="sqeuclidean")
         else:
             K = pdist(signal, metric="sqeuclidean")
         K /= np.median(K)
